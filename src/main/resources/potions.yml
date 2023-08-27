@@ -1,6 +1,5 @@
-#
-#  Settings for Concoctions
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+# 此配置用于调整 Concoctions（酿造物） 的设置
+# 上次更新时间为 ${project.version}-b${BUILD_NUMBER}
 ###
 Concoctions:
     Tier_One_Ingredients:
@@ -40,17 +39,17 @@ Concoctions:
         - GOLDEN_APPLE
 
 #
-# Settings for Potions
+# 药水的设置
 #
-#   <identifier>:                       Identifier to reference by, backwards compatible to use as data values
-#       Name: <name>                    Custom display name for this potion (optional)
-#       Material: <material>            Material for this potion, defaults to POTION
-#       Data:  <data_value>             Data value for this potion (if this is not present it will read from identifier)
-#       Color: <color>                  Custom color for the potion in RGB integer (e.g. 0xFF000, optional)
-#       Lore: ["lore1","lore2"...]      Custom lore for this potion (section is optional)
-#       Children:                       The potential children of this potion (section is optional)
-#           <INGREDIENT>: <NEW_IDENTIFIER>      The ingredient used, and resultant potion's identifier
-#       Effects:                        List of strings for the potion's effects (section is optional)
+#   <identifier>:                       用于引用的标识符，向后兼容以用作数据值
+#       Name: <name>                    此药水的自定义显示名称（可选）
+#       Material: <material>            此药水的材料，默认为 POTION
+#       Data:  <data_value>             此药水的数据值（如果没有提供，将从标识符中读取）
+#       Color: <color>                  此药水的自定义颜色（RGB 整数格式，例如 0xFF000，可选）
+#       Lore: ["lore1","lore2"...]      此药水的自定义说明（可选部分）
+#       Children:                       此药水的潜在子药水（可选部分）
+#           <INGREDIENT>: <NEW_IDENTIFIER>      使用的原料，以及生成的药水的标识符
+#       Effects:                        药水的效果列表（可选部分）
 #           - "<POTION_EFFECT> [EFFECT_TIER] [DURATION_TICKS]"
 #
 

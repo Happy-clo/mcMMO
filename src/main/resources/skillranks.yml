@@ -1,9 +1,9 @@
-# This file defines the rank level requirements for a subskill.
-# You cannot alter how many ranks a skill has, that is coded into mcMMO directly.
-# You can however, change when they unlock, if you make all ranks of a skill level 0 for example every player will have the most powerful version of that skill right away.
-# Retro Mode and Standard have separate config settings to make it easier for server owners to understand the difference between the two.
-# Retro Mode is setup to be an entirely cosmetic change, keeping the old 0-1000 feeling of mcMMO.
-# Retro Mode has 10x faster leveling and 10x higher skill requirements, if you do the math you can see its the same as Standard and only cosmetic!.
+# 此文件定义了子技能的等级要求。
+# 你不能更改技能的等级数，这已经直接编码在mcMMO中。
+# 不过你可以改变它们解锁的时间，例如，如果你将一个技能的所有等级都设为0，那么每个玩家将立即拥有该技能的最强版本。
+# 复古模式（Retro Mode）和标准模式（Standard）有单独的配置设置，以便服务器所有者更容易理解两者之间的区别。
+# 复古模式被设置为完全的视觉变化，保留了mcMMO旧有的0-1000级感觉。
+# 复古模式的升级速度提高了10倍，技能要求提高了10倍，如果你做下数学计算，你会发现它与标准模式是相同的，只是视觉效果而已！
 ###
 Alchemy:
     Catalysis:

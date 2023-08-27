@@ -1,8 +1,8 @@
 #
-#  Settings for Custom Mobs
+#  自定义生物设置
 #
-#  Mob name should be the entity type of the mob - usually "ModName_EntityName"
-#  Be sure to use the "_" character in place of any "." characters in the mob name.
+#  生物名称应为生物的实体类型 - 通常为 "ModName_EntityName"
+#  请确保在生物名称中使用"_"字符来替代任何"."字符。
 ###
 Mob_1:
     Class: CLASS_NAME

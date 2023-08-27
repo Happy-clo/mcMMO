@@ -1,11 +1,9 @@
 #
-#  Item Weights configuration
-#  
-#  This file is used to determine the value of an item. This will only 
-#  happen when users are sharing items in a party using the EQUAL item share mode.
+# 物品权重配置
 #
-#  Rare items should have a higher value than common items. If an item is not listed
-#  here, the value from "Default" will be used instead.
+# 此文件用于确定物品的价值。这仅会在用户使用 EQUAL 物品共享模式在队伍中共享物品时发生。
+#
+# 稀有物品的价值应高于普通物品。如果一个物品未在此处列出，将使用“Default”中的值。
 #
 #####
 Item_Weights:
@@ -53,8 +51,8 @@ Item_Weights:
     Iron_Leggings: 60
     Iron_Boots: 60
 
-# Items in this section will get added to the Misc share category.
-# Case insensitive, though the name must be exactly the same as set in the Bukkit Material enum.
+# 此部分中的物品将添加到“Misc share”类别中。
+# 不区分大小写，但名称必须与 Bukkit Material 枚举中设置的完全相同。
 Party_Shareables:
     Misc_Items:
         - Diamond_Sword

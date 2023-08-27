@@ -1,34 +1,33 @@
 #
-#  Advanced configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+# 高级配置
+# 最后更新于${project.version}-b${BUILD_NUMBER}
 #
-#  For advanced users only! There is no need to change anything here.
+# 仅供高级用户使用！无需在此处更改任何内容。
 #
-#  You can customize almost every aspect of every skill here.
-#  Its mainly here if you've customized the experience formula.
-#  Configure at what level you get better with certain abilities.
+# 您几乎可以自定义每个技能的几乎所有方面。
+# 主要用于自定义体验公式。
+# 配置在什么等级上您在某些能力方面变得更好。
 #
-#####
 
 #
-#  Settings for the Skills
+# 技能设置
 ###
-# Enables anonymous statistics
+# 启用匿名统计数据
 Metrics:
     bstats: true
 Feedback:
     PlayerTips: true
     SkillCommand:
         BlankLinesAboveHeader: true
-    # If sendtitles is true messages will be sent using the title api (BIG TEXT ON SCREEN)
+    # 如果sendtitles为true，消息将使用标题API发送（在屏幕上的大文字）
     Events:
         XP:
             SendTitles: true
-        # Send notifications to the chat or actionbar of other nearby players when a user activates an ability
+        # 当用户激活能力时，向其他附近玩家的聊天或动作栏发送通知
         AbilityActivation:
             SendNotificationToOtherPlayers: true
-    #The actionbar is the message location right above the health bar
-    ## If you disable the action bar messages, mcMMO will send the message to the chat system instead
+    # 动作栏是健康条上方的消息位置
+    ## 如果禁用动作栏消息，mcMMO将将消息发送到聊天系统
     ActionBarNotifications:
         AbilityOff:
             Enabled: true
@@ -95,18 +94,12 @@ Skills:
                     CapLevel: 1000
                     IncreaseLevel: 50
             EnchantBuff: 5
-            # IncreaseLevel: This setting will determine when the length of every ability gets longer with 1 second
-            # EnchantBuff: This setting determines how many enchant levels to use when buffing Super Breaker & Giga Drill Breaker
-
 
     #
-    #  Settings for Acrobatics
+    # 跳跃技能设置
     ###
     Acrobatics:
         Dodge:
-            # ChanceMax: Maximum chance of dodging when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: On this level or higher, the dodge chance will not go higher than <ChanceMax>
-            # DamageModifier: Dodge damage will be divided by this modifier
             ChanceMax: 20.0
             MaxBonusLevel:
                 Standard: 100
@@ -114,42 +107,29 @@ Skills:
             DamageModifier: 2.0
 
         Roll:
-            # ChanceMax: Maximum chance of rolling when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: On this level or higher, the roll chance will not go higher than <ChanceMax>
-            # DamageThreshold: The max damage a player can negate with a roll, graceful roll doubles this number
             ChanceMax: 100.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
             DamageThreshold: 7.0
     #
-    #  Settings for Alchemy
+    # 炼金术技能设置
     ###
     Alchemy:
         Catalysis:
-            # MaxBonusLevel: Maximum bonus level of Catalysis, when a player reaches this level his brewing speed will be <MaxSpeed>
-            # MinSpeed: Minimum brewing speed allowed when at <UnlockLevel> or lower
-            # MaxSpeed: Maximum brewing speed allowed when at <MaxBonusLevel> or higher
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
             MinSpeed: 1.0
             MaxSpeed: 4.0
     #
-    #  Settings for Archery
+    # 射箭技能设置
     ###
     Archery:
         SkillShot:
-            # RankDamageMultiplier: The current rank of this subskill is multiplied by this value to determine the bonus damage, rank 20 would result in 200% damage increase with a value of 10.0 for RankDamageMultiplier
-            # RankDamageMultiplier is a percentage
             RankDamageMultiplier: 10.0
-            # MaxDamage: After adding bonus damage, the total damage dealt by the player will not exceed this number
-            # You should be careful to not set this too low
             MaxDamage: 9.0
         Daze:
-            # ChanceMax: Maximum chance of causing daze to opponents when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: Maximum bonus level of Daze, when a player reaches this level his chance of causing a daze will be <ChanceMax>
-            # Modifier: Extra damage for arrows that cause a daze (2 damage = 1 heart)
             ChanceMax: 50.0
             MaxBonusLevel:
                 Standard: 100
@@ -157,61 +137,43 @@ Skills:
             BonusDamage: 4.0
 
         ArrowRetrieval:
-            # ChanceMax: Maximum chance of retrieving arrows when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: Maximum bonus level for Arrow retrieval, at this level the chance of retrieving arrows from mobs is <ChanceMax>
             ChanceMax: 100.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
-        # ForceMultiplier: Multiply the force of the bow by this for an XP boost.
         ForceMultiplier: 2.0
     #
-    #  Settings for Axes
+    # 斧头技能设置
     ###
     Axes:
         AxeMastery:
-            # This number is multiplied by the current rank the player has in this subskill to find the amount of additional damage to apply
-            # With the default config value of 1.0, at rank 4 a player will deal 4.0 extra damage with Axes (1.0 * 4)
             RankDamageMultiplier: 1.0
         CriticalStrikes:
-            # ChanceMax: Maximum chance of causing a critical hit when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: Level where <ChanceMax> of causing critical hits is reached
             ChanceMax: 37.50
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
-            # Damage modifier of critical hits for PVP / PVE, when causing a critical hit the damage gets multiplied by the modifier
             PVP_Modifier: 1.5
             PVE_Modifier: 2.0
 
         GreaterImpact:
-            # Chance: Chance of hitting with GreaterImpact, mobs are knocked backwards when successful
-            # KnockbackModifier: Velocity modifier of GreaterImpact hits, this determines how great the knockback is
-            # BonusDamage: Extra damage for GreaterImpact hits
             Chance: 25.0
             KnockbackModifier: 1.5
             BonusDamage: 2.0
 
         ArmorImpact:
-            # Multiplied against the skill rank to determine how much damage to do
             DamagePerRank: 6.5
-            # IncreaseLevel: Every <IncreaseLevel> the durability damage goes up with 1
-            # Chance: Chance of hitting with ArmorImpact
-            # MaxPercentageDurabilityDamage: Durability damage cap for ArmorImpact, 20% means that you can never destroy a piece of armor in less than 5 hits
             Chance: 25.0
         SkullSplitter:
-            # DamageModifier: Damage will get divided by this modifier
             DamageModifier: 2.0
     #
-    #  Settings for Fishing
+    # 钓鱼技能设置
     ###
     Fishing:
-
         ShakeChance:
             Rank_1: 30
 
-        # VanillaXPMultiplier: Vanilla XP gained from fishing is multiplied by these values.
         VanillaXPMultiplier:
             Rank_1: 1
             Rank_2: 2
@@ -223,7 +185,6 @@ Skills:
             Rank_8: 5
 
         FishermansDiet:
-            # This determines when Fisherman's Diet adds extra hunger recovery to food
             RankChange: 20
 
         MasterAngler:
@@ -234,55 +195,44 @@ Skills:
                 Min_Wait: 10
                 Max_Wait: 30
             Tick_Reduction_Caps:
-                # Don't modify these two unless you fully understand what you are doing
                 Min_Wait: 40
                 Max_Wait: 100
     #
-    #  Settings for Herbalism
+    # 草药技能设置
     ###
     Herbalism:
 
         GreenThumb:
-            # ChanceMax: Maximum chance of GreenThumb when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: On this level, GreenThumb chance will be <ChanceMax>
             ChanceMax: 100.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
         DoubleDrops:
-            # ChanceMax: Maximum chance of receiving double drops when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: Level when <ChanceMax> of receiving double drops is reached
             ChanceMax: 100.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
         HylianLuck:
-            # ChanceMax: Maximum chance of Hylian Luck when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: On this level, Hylian Luck chance will be <ChanceMax>
             ChanceMax: 10.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
         ShroomThumb:
-            # ChanceMax: Maximum chance of ShroomThumb when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: On this level, ShroomThumb chance will be <ChanceMax>
             ChanceMax: 50.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
     #
-    #  Settings for Mining
+    # 采矿技能设置
     ###
     Mining:
         SuperBreaker:
             AllowTripleDrops: true
         DoubleDrops:
             SilkTouch: true
-            # ChanceMax: Maximum chance of receiving double drops when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: Level when <ChanceMax> of receiving double drops is reached
             ChanceMax: 100.0
             MaxBonusLevel:
                 Standard: 100
@@ -291,7 +241,6 @@ Skills:
         BlastMining:
             Bonus_Drops:
                 Enabled: true
-            # BlastDamageDecrease Ranks: % of damage reduced from TNT explosions
             BlastDamageDecrease:
                 Rank_1: 0.0
                 Rank_2: 0.0
@@ -302,7 +251,6 @@ Skills:
                 Rank_7: 50.0
                 Rank_8: 100.0
 
-            # OreBonus Ranks: % of extra ores received when Blast Mining
             OreBonus:
                 Rank_1: 35.0
                 Rank_2: 40.0
@@ -313,7 +261,6 @@ Skills:
                 Rank_7: 65.0
                 Rank_8: 70.0
 
-            # DebrisReduction_Rank: % of fewer non-ores received when Blast Mining
             DebrisReduction:
                 Rank_1: 10.0
                 Rank_2: 20.0
@@ -324,7 +271,6 @@ Skills:
                 Rank_7: 30.0
                 Rank_8: 30.0
 
-            # DropMultiplier Ranks: # of times each ore will drop
             DropMultiplier:
                 Rank_1: 1
                 Rank_2: 1
@@ -335,7 +281,6 @@ Skills:
                 Rank_7: 3
                 Rank_8: 3
 
-            # BlastRadiusModifier Ranks: Increases the blast radius by this amount
             BlastRadiusModifier:
                 Rank_1: 1.0
                 Rank_2: 1.0
@@ -346,20 +291,16 @@ Skills:
                 Rank_7: 4.0
                 Rank_8: 4.0
     #
-    #  Settings for Repair
+    # 修复技能设置
     ###
     Repair:
         RepairMastery:
-            # MaxBonusPercentage: Maximum bonus percentage for Repair Mastery
-            # MaxBonusLevel: On this level, the maximum bonus is reached
             MaxBonusPercentage: 200.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
         SuperRepair:
-            # ChanceMax: Maximum chance of Super Repair when on <MaxBonusLevel> or higher
-            # MaxBonusLevel: On this level, Super Repair chance will be <ChanceMax>
             ChanceMax: 100.0
             MaxBonusLevel:
                 Standard: 100
@@ -387,16 +328,13 @@ Skills:
                 Rank_7: 15.0
                 Rank_8: 10.0
     #
-    #  Settings for Salvage
+    # 拆解技能设置
     ###
     Salvage:
         ArcaneSalvage:
-            # EnchantLossEnabled: When salvaging enchanted items, the enchants may be lost
-            # EnchantDowngradeEnabled: When salvaging enchanted items, the enchants may be downgraded
             EnchantLossEnabled: true
             EnchantDowngradeEnabled: true
 
-            # ExtractFullEnchant: Chance to extract the full enchant at each ArcaneSalvage rank
             ExtractFullEnchant:
                 Rank_1: 2.5
                 Rank_2: 5.0
@@ -407,7 +345,6 @@ Skills:
                 Rank_7: 25.0
                 Rank_8: 32.5
 
-            # ExtractPartialEnchant: Chance to extract the partial enchant at each ArcaneSalvage rank
             ExtractPartialEnchant:
                 Rank_1: 2.0
                 Rank_2: 2.5
@@ -418,25 +355,21 @@ Skills:
                 Rank_7: 15.0
                 Rank_8: 17.5
     #
-    #  Settings for Smelting
+    # 冶炼技能设置
     ###
     Smelting:
         SecondSmelt:
-            # ChanceMax: Maximum chance of triggering Second Smelt
-            # MaxBonusLevel: On this level, the chance to cause Second Smelt will be <ChanceMax>
             ChanceMax: 50.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
         FluxMining:
-            # Chance: Chance for Flux Mining to activate
             Chance: 33.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
 
-        # VanillaXPMultiplier: Vanilla XP gained from smelting ores is multiplied by these values.
         VanillaXPMultiplier:
             Rank_1: 1
             Rank_2: 2
@@ -447,166 +380,164 @@ Skills:
             Rank_7: 5
             Rank_8: 5
 
-    #
-    #  Settings for Swords
-    ###
-    Swords:
-        Rupture:
-            Rupture_Mechanics:
-                # This is % chance, 15 would mean 15% percent of the time
-                Chance_To_Apply_On_Hit:
-                    Rank_1: 15
-                    Rank_2: 33
-                    Rank_3: 40
-                    Rank_4: 66
-                Duration_In_Seconds:
-                    Against_Players: 5
-                    Against_Mobs: 5
-                # Tick interval damage is applied twice a second during rupture, it is "pure" and does not get lowered from armor or absorption etc
-                Tick_Interval_Damage:
-                    Against_Players:
-                        Rank_1: 0.1
-                        Rank_2: 0.15
-                        Rank_3: 0.2
-                        Rank_4: 0.3
-                    Against_Mobs:
-                        Rank_1: 0.5
-                        Rank_2: 0.75
-                        Rank_3: 0.9
-                        Rank_4: 1
-                # If Rupture runs for 5 seconds without being reapplied, it explodes
-                # this damage is **NOT** pure and is reduced dramatically vs armor/absorption/etc
-                Explosion_Damage:
-                    Against_Players:
-                        Rank_1: 10
-                        Rank_2: 20
-                        Rank_3: 30
-                        Rank_4: 40
-                    Against_Mobs:
-                        Rank_1: 10
-                        Rank_2: 20
-                        Rank_3: 30
-                        Rank_4: 40
+#
+# 剑的设置
+###
+Swords:
+    Rupture:
+        Rupture_Mechanics:
+            # 这是 % 几率，15 表示 15% 几率
+            Chance_To_Apply_On_Hit:
+                Rank_1: 15
+                Rank_2: 33
+                Rank_3: 40
+                Rank_4: 66
+            Duration_In_Seconds:
+                Against_Players: 5
+                Against_Mobs: 5
+            # Tick interval damage 在 rupture 期间每秒应用两次伤害，它是“纯粹的”伤害，不会因护甲或吸收等而降低
+            Tick_Interval_Damage:
+                Against_Players:
+                    Rank_1: 0.1
+                    Rank_2: 0.15
+                    Rank_3: 0.2
+                    Rank_4: 0.3
+                Against_Mobs:
+                    Rank_1: 0.5
+                    Rank_2: 0.75
+                    Rank_3: 0.9
+                    Rank_4: 1
+            # 如果 rupture 运行了 5 秒钟而没有被重新应用，它会爆炸
+            # 此伤害 **不是** 纯粹的，会受到护甲/吸收等的大幅降低
+            Explosion_Damage:
+                Against_Players:
+                    Rank_1: 10
+                    Rank_2: 20
+                    Rank_3: 30
+                    Rank_4: 40
+                Against_Mobs:
+                    Rank_1: 10
+                    Rank_2: 20
+                    Rank_3: 30
+                    Rank_4: 40
         CounterAttack:
-            # ChanceMax: Maximum chance of triggering a counter attack
-            # MaxBonusLevel: On this level, the chance to Counter will be <ChanceMax>
+            # ChanceMax: 触发反击的最大几率
+            # MaxBonusLevel: 达到此等级时，触发反击的几率将为 <ChanceMax>
             ChanceMax: 30.0
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
-
-            # DamageModifier: Damaged caused by the damager will get divided by this modifier and dealt back to the damager
+            # DamageModifier: 被攻击者造成的伤害将除以此修饰符，然后返回给攻击者
             DamageModifier: 2.0
 
         SerratedStrikes:
-            # DamageModifier: Damage will get divided by this modifier
-            # BleedTicks: This determines how long the bleeding effect of SerratedStrikes lasts
+            # DamageModifier: 伤害将除以此修饰符
+            # BleedTicks: SerratedStrikes 的流血效果持续的时长
             DamageModifier: 4.0
             BleedTicks: 5
-    #
-    #  Settings for Taming
-    ###
-    Taming:
-        Gore:
-            # ChanceMax: Maximum chance of triggering gore
-            # MaxBonusLevel: On this level, the chance to cause Gore will be <ChanceMax>
-            ChanceMax: 100.0
-            MaxBonusLevel:
-                Standard: 100
-                RetroMode: 1000
-            # Modifier: Damage will get multiplied by this modifier
-            Modifier: 2.0
-        FastFoodService:
-            # Chance: The chance for wolves to heal hp when inflicting damage
-            Chance: 50.0
-        EnvironmentallyAware:
-        ThickFur:
-            # Modifier: Damage will get divided by this modifier
-            Modifier: 2.0
-        ShockProof:
-            # Modifier: Damage will get divided by this modifier
-            Modifier: 6.0
-        SharpenedClaws:
-            # Bonus: This bonus will get added to the damage caused
-            Bonus: 2.0
-        CallOfTheWild:
-            # MinHorseJumpStrength: The minimum jump strength a summoned horse must have
-            # MaxHorseJumpStrength: The maximum jump strength a summoned horse can have
-            MinHorseJumpStrength: 0.7
-            MaxHorseJumpStrength: 2.0
-        Pummel:
-            # ChanceMax: Maximum chance of triggering pummel
-            Chance: 10.0
-    #
-    #  Settings for Unarmed
-    ###
-    Unarmed:
-        Disarm:
-            # ChanceMax: Maximum chance of disarming other players
-            # MaxBonusLevel: Level when the maximum chance to disarm is reached
-            # AntiTheft: Determines if only the disarmed player can retrieve disarmed items
-            ChanceMax: 33.0
-            MaxBonusLevel:
-                Standard: 100
-                RetroMode: 1000
-            AntiTheft: false
+#
+# 驯服的设置
+###
+Taming:
+    Gore:
+        # ChanceMax: 触发撕裂的最大几率
+        # MaxBonusLevel: 达到此等级时，造成撕裂的几率将为 <ChanceMax>
+        ChanceMax: 100.0
+        MaxBonusLevel:
+            Standard: 100
+            RetroMode: 1000
+        # Modifier: 伤害将乘以此修饰符
+        Modifier: 2.0
+    FastFoodService:
+        # Chance: 狼在造成伤害时恢复生命值的几率
+        Chance: 50.0
+    EnvironmentallyAware:
+    ThickFur:
+        # Modifier: 伤害将除以此修饰符
+        Modifier: 2.0
+    ShockProof:
+        # Modifier: 伤害将除以此修饰符
+        Modifier: 6.0
+    SharpenedClaws:
+        # Bonus: 此奖励将添加到造成的伤害
+        Bonus: 2.0
+    CallOfTheWild:
+        # MinHorseJumpStrength: 召唤马匹必须具备的最小跳跃强度
+        # MaxHorseJumpStrength: 召唤马匹可具备的最大跳跃强度
+        MinHorseJumpStrength: 0.7
+        MaxHorseJumpStrength: 2.0
+    Pummel:
+        # ChanceMax: 触发猛击的最大几率
+        Chance: 10.0
+#
+# 无武器的设置
+###
+Unarmed:
+    Disarm:
+        # ChanceMax: 解除其他玩家武装的最大几率
+        # MaxBonusLevel: 达到此等级时，解除武装的几率将为 <ChanceMax>
+        ChanceMax: 33.0
+        MaxBonusLevel:
+            Standard: 100
+            RetroMode: 1000
+        AntiTheft: false
 
-        ArrowDeflect:
-            # ChanceMax: Maximum chance of deflecting arrows
-            # MaxBonusLevel: Level when the maximum chance to deflect is reached
-            ChanceMax: 50.0
-            MaxBonusLevel:
-                Standard: 100
-                RetroMode: 1000
+    ArrowDeflect:
+        # ChanceMax: 折射箭矢的最大几率
+        # MaxBonusLevel: 达到此等级时，折射箭矢的几率将为 <ChanceMax>
+        ChanceMax: 50.0
+        MaxBonusLevel:
+            Standard: 100
+            RetroMode: 1000
 
-        IronGrip:
-            # ChanceMax: Maximum chance of preventing being disarmed
-            # MaxBonusLevel: Level when the maximum chance to prevent being disarmed is reached
-            ChanceMax: 100.0
-            MaxBonusLevel:
-                Standard: 100
-                RetroMode: 1000
+    IronGrip:
+        # ChanceMax: 防止被解除武装的最大几率
+        # MaxBonusLevel: 达到此等级时，防止被解除武装的几率将为 <ChanceMax>
+        ChanceMax: 100.0
+        MaxBonusLevel:
+            Standard: 100
+            RetroMode: 1000
 
-        SteelArmStyle:
-            # BonusMin: Minimum bonus damage for unarmed
-            # BonusMax: Maximum bonus damage for unarmed
-            # IncreaseLevel: Bonus damage increases every increase level
-            Damage_Override: false
-            Override:
-                Rank_1: 1
-                Rank_2: 1.5
-                Rank_3: 2.0
-                Rank_4: 2.5
-                Rank_5: 3.0
-                Rank_6: 3.5
-                Rank_7: 4.0
-                Rank_8: 4.5
-                Rank_9: 5.0
-                Rank_10: 5.5
-                Rank_11: 6.0
-                Rank_12: 6.5
-                Rank_13: 7.0
-                Rank_14: 7.5
-                Rank_15: 8.0
-                Rank_16: 8.5
-                Rank_17: 9.0
-                Rank_18: 10.5
-                Rank_19: 12.0
-                Rank_20: 13.5
-    #
-    #  Settings for Woodcutting
-    ###
-    Woodcutting:
-        TreeFeller:
-            Knock_On_Wood:
-                Add_XP_Orbs_To_Drops: true
+    SteelArmStyle:
+        # BonusMin: 无武器时的最小奖励伤害
+        # BonusMax: 无武器时的最大奖励伤害
+        # IncreaseLevel: 奖励伤害每次增加等级时都会增加
+        Damage_Override: false
+        Override:
+            Rank_1: 1
+            Rank_2: 1.5
+            Rank_3: 2.0
+            Rank_4: 2.5
+            Rank_5: 3.0
+            Rank_6: 3.5
+            Rank_7: 4.0
+            Rank_8: 4.5
+            Rank_9: 5.0
+            Rank_10: 5.5
+            Rank_11: 6.0
+            Rank_12: 6.5
+            Rank_13: 7.0
+            Rank_14: 7.5
+            Rank_15: 8.0
+            Rank_16: 8.5
+            Rank_17: 9.0
+            Rank_18: 10.5
+            Rank_19: 12.0
+            Rank_20: 13.5
+#
+# 伐木的设置
+###
+Woodcutting:
+    TreeFeller:
+        Knock_On_Wood:
+            Add_XP_Orbs_To_Drops: true
 
-        # Double Drops
-        HarvestLumber:
-            # ChanceMax & MaxBonusLevel are only used for Classic, I'll make that more clear in the future.
-            # ChanceMax: Maximum chance of receiving double drops (100 = 100%)
-            # MaxBonusLevel: Level when the maximum chance of receiving double drops is reached
-            ChanceMax: 100.0
-            MaxBonusLevel:
-                Standard: 100
-                RetroMode: 1000
+    # 双倍掉落
+    HarvestLumber:
+        # ChanceMax 和 MaxBonusLevel 仅用于 Classic，我会在未来做出更明确的说明。
+        # ChanceMax: 获得双倍掉落的最大几率（100 = 100%）
+        # MaxBonusLevel: 达到此等级时，获得双倍掉落的几率将为 <ChanceMax>
+        ChanceMax: 100.0
+        MaxBonusLevel:
+            Standard: 100
+            RetroMode: 1000
