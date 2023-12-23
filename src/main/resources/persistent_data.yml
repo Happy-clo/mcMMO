@@ -1,37 +1,36 @@
-# This config allows servers to change which data is persistent and which data isn't
-# For 10 years mcMMO had transient data (temporary) for a lot of things and recently in October 2020 I added the option to have things be persistent (saved to disk and permanently remembered)
-# However, this is Minecraft, and Minecraft has a lot of entities, and when you start to make data persistent there is a performance cost associated with that
-# Any option you turn on, is another thing your disk has to save when a chunk is being unloaded with that entity inside of it, Minecraft can quickly build up tens of thousands of entities so keep this in mind.
+# 此配置允许服务器更改哪些数据是持久的，哪些数据不是
+# 在 10 年的时间里，mcMMO 对于许多事物都使用了临时数据（暂时性），最近在 2020 年 10 月，我添加了可以让事物持久化（保存到磁盘并永久记住）的选项
+# 然而，这是 Minecraft，Minecraft 有很多实体，当您开始使数据持久化时，会有与之相关的性能成本
+# 您打开的任何选项，都是您的磁盘在卸载包含该实体的区块时必须保存的另一种东西，Minecraft 可以迅速积累数万个实体，所以请记住这一点。
 #
-# I am considering alternative to using Spigots NBT API to avoid this performance cost, but the code for those will take some time to write and test, for now it is not recommended
-#  to turn any of these settings on without monitoring the TPS of your server afterwards. With the exception of the COTW setting which will probably have almost no performance impact if left on.
+# 我正在考虑使用 Spigot 的 NBT API 的替代方法，以避免这种性能成本，但是这些代码需要一些时间来编写和测试，目前不建议在没有监控服务器 TPS 的情况下打开这些设置。除了 COTW 设置外，如果保持打开，它可能几乎不会对性能产生影响。
 Persistent_Data:
     Mobs:
         Flags:
-            # By default mcMMO gives 0 XP for this type of mob, adjust in experience.yml
+            # 默认情况下，mcMMO 为此类型的生物提供 0 经验，可以在 experience.yml 中进行调整
             MOB_SPAWNER_MOB:
                 Saved_To_Disk: false
-            # By default mcMMO gives 0 XP for this type of mob, adjust in experience.yml
+            # 默认情况下，mcMMO 为此类型的生物提供 0 经验，可以在 experience.yml 中进行调整
             EGG_MOB:
                 Saved_To_Disk: false
-            # By default mcMMO gives 0 XP for this type of mob, adjust in experience.yml
+            # 默认情况下，mcMMO 为此类型的生物提供 0 经验，可以在 experience.yml 中进行调整
             NETHER_PORTAL_MOB:
                 Saved_To_Disk: false
-            # These mobs have low impact on performance and thus it is recommended you leave this on true
+            # 这些生物对性能影响较小，因此建议您将其保持为 true
             COTW_SUMMONED_MOB:
                 Saved_To_Disk: true
-            # By default mcMMO gives normal XP for player bred mobs, adjust in experience.yml
+            # 默认情况下，mcMMO 为此类型的生物提供正常经验，可以在 experience.yml 中进行调整
             PLAYER_BRED_MOB:
                 Saved_To_Disk: false
-            # By default mcMMO gives 0 XP for this type of mob, due to an exploit in Minecraft you can spawn 1000 endermen in seconds using this trick.
-            # Adjust in experience.yml under the section labeled exploit fix
+            # 默认情况下，mcMMO 为此类型的生物提供 0 经验，由于 Minecraft 中的漏洞，您可以使用此技巧在几秒钟内生成 1000 个末影人。
+            # 在标有漏洞修复的 experience.yml 部分中进行调整
             EXPLOITED_ENDERMEN:
                 Saved_To_Disk: false
-            # By default mcMMO gives 0 XP for this type of mob, not adjustable currently
+            # 默认情况下，mcMMO 为此类型的生物提供 0 经验，当前无法调整
             PLAYER_TAMED_MOB:
                 Saved_To_Disk: false
-# When players put down a block we track it, the system used to track player blocks is super efficient and has been coded extremely well
-# It is never recommended to turn this off as it allows exploits such as player dupes etc
-# We use our own file system for this outside of NBT which has been programmed to be lightning fast
+# 当玩家放置一个方块时，我们会跟踪它，用于跟踪玩家方块的系统非常高效，编写得非常出色
+# 不建议关闭此功能，因为它可能导致玩家重复等问题
+# 我们使用自己的文件系统进行此操作，超出了 NBT，其编程非常迅速
 mcMMO_Region_System:
     Enabled: true

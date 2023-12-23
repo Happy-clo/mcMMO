@@ -1,51 +1,50 @@
 #
-#  Salvage configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+#  Salvage配置
+#  上次更新时间：${project.version}-b${BUILD_NUMBER}
 #
-# Any file named salvage.*.yml in the mcmmmo folder will be loaded as a salvage config
-# All salvage configs have a main section titled "Salvageables"
-# Afterwards, all sub-items are considered a Salvageable to be loaded. The names of each subitem should be the exact material name.
-# The bare minimum of a Salvageable is that it has a minimumLevel and XpMultiplier.
+# 位于mcmmo文件夹中的任何名为salvage.*.yml的文件将被加载为salvage配置
+# 所有salvage配置都有一个名为"Salvageables"的主节
+# 此后，所有子项都被视为要加载的Salvageable。每个子项的名称应为确切的材料名称。
+# 最基本的Salvageable要求具有minimumLevel和XpMultiplier。
 #
-# ItemType: This is the type of item to be repaired, this is only important to permissions.
-## Valid values are ARMOR, TOOL, and OTHER.
-## This defaults to OTHER.
+# ItemType：要修复的物品类型，这只对权限很重要。
+## 有效值为ARMOR、TOOL和OTHER。
+## 默认为OTHER。
 #
-# MaterialType: This is the type of the material of the item to be salvaged, this is only important for permissions.
-## Valid values are STRING, LEATHER, WOOD, STONE, IRON, GOLD, DIAMOND, NETHER, and OTHER
-## This defaults to OTHER.
+# MaterialType：要拆解的物品的材料类型，这只对权限很重要。
+## 有效值为STRING、LEATHER、WOOD、STONE、IRON、GOLD、DIAMOND、NETHER和OTHER
+## 默认为OTHER。
 #
-# SalvageMaterial: This is the material name of the item used to salvage this item.
-## This is required to be set for non craftable items, if not set mcMMO checks the crafting recipe to see which items
-## should be dropped when salvaging the item.
+# SalvageMaterial：用于拆解此物品的物品的材料名称。
+## 对于不可制作的物品，必须设置此项，如果未设置，mcMMO将检查制作配方以查看拆解物品时应该掉落哪些物品。
 #
-# SalvageMaterialMetadata: This is the metadata of the item used to salvage this item.
-## A value of -1 means to ignore all metadata when repairing.
-## This defaults to -1
+# SalvageMaterialMetadata：用于拆解此物品的物品的元数据。
+## 值为-1表示修复时忽略所有元数据。
+## 默认为-1
 #
-# MaximumDurability: This is the maximum durability of the item.
+# MaximumDurability：物品的最大耐久度。
 #
-# MinimumLevel: This is the minimum repair level needed to salvage this item.
-## Valid values are => 0
-## This defaults to 0
+# MinimumLevel：拆解此物品所需的最低修复等级。
+## 有效值为=> 0
+## 默认为0
 #
-# MaximumQuantity: This is the maximum number of items yield after salvaging the item, ignoring all other salvage bonuses.
-## This is typically the number of the salvage material needed to create a new item, for example for a sword it is 2, for an axe it is 3
-## This defaults to 2
+# MaximumQuantity：拆解物品后产生的最大物品数量，忽略所有其他拆解奖励。
+## 通常情况下，这是创建新物品所需的拆解材料的数量，例如对于剑是2，对于斧头是3
+## 默认为2
 #
-# XpMultiplier: This is the amount to multiply the xp bonus by.
-## This defaults to 1
+# XpMultiplier：将经验奖励乘以的数量。
+## 默认为1
 #
 #
-# The following is the default salvage config that ships with mcMMO, it contains all vanilla items that are salvageable.
+# 以下是随mcMMO一起提供的默认salvage配置，其中包含所有可拆解的原版物品。
 #
 #
 ###
 Salvageables:
     #
-    # Wooden salvageables
+    # 木制拆解物品
     ###
-    # Tools
+    # 工具
     WOODEN_SWORD:
         MinimumLevel: 0
         XpMultiplier: .25

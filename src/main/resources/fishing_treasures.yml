@@ -1,6 +1,6 @@
 #
-#  Settings for Fishing Treasures / Shake Treasures
-#  Last updated on 12/28/2020
+# 钓鱼宝藏 / 摇晃宝藏设置
+# 最后更新于 2023 年 8 月 4 日
 ###
 Fishing:
     LEATHER_BOOTS:
@@ -247,8 +247,8 @@ Fishing:
         Amount: 1
         XP: 400
         Rarity: LEGENDARY
-# Uncomment the below 3 lines to use the Whitelist, Alternatively rename it Enchantments_Blacklist to use the blacklist
-# NOTE: Enchantments_Whitelist and Enchantments_Blacklist only do anything for Enchanted_Books at the moment, you can't use it with any other treasure definition
+# 取消下面的三行注释以使用白名单，或将其重命名为 Enchantments_Blacklist 以使用黑名单
+# 注意：Enchantments_Whitelist 和 Enchantments_Blacklist 目前只对附魔书有影响，您无法在任何其他宝藏定义中使用它
 #        Enchantments_Whitelist:
 #            - Fortune
 #            - Protection
@@ -257,7 +257,7 @@ Fishing:
         XP: 400
         Rarity: LEGENDARY
 #
-#	Fishing drop rates
+#	钓鱼掉落几率
 ###
 Item_Drop_Rates:
     Tier_1:

@@ -1,11 +1,11 @@
 #
-#  mcMMO child skill configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+#  mcMMO子技能配置
+#  上次更新时间：${project.version}-b${BUILD_NUMBER}
 #
-#  You do not need to modify this file except to change parents of child skills
+#  除了更改子技能的父级之外，您无需修改此文件
 #
-#  If you wish a child skill to be the parent of another child skill, you must also make your changes to the child.yml within the jar
-#  WARNING: THIS IS NOT SUPPORTED, IF YOU DO SO YOU ARE RESPONSIBLE FOR THE ISSUES THAT MAY ARISE.  That said, watch out for circular dependencies, those are bad.
+#  如果您希望一个子技能成为另一个子技能的父级，您还必须对jar包中的child.yml进行更改
+#  警告：不支持此操作，如果您这样做，您将对可能出现的问题负有责任。尽管如此，请注意避免循环依赖，这种情况很糟糕。
 #
 #####
 Salvage:

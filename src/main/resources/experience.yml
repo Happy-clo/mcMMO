@@ -1,27 +1,27 @@
 #
-#  Experience configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+# 经验设置
+# 最后更新于 ${project.version}-b${BUILD_NUMBER}
 #
-#  Configure the experience formula and experience settings here.
+# 在这里配置经验公式和经验设置。
 #
 #####
 
 
 
 # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html
-# These are the only valid colors for Experience Bars, use the exact name found here
-# BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW (As of the time of this update these are the only Bar colors available, this could change in the future so check the BarColor enum to see if it has)
-# BarStyle Settings (USE THE EXACT NAME) :
-#SEGMENTED_10
-#   Splits the boss bar into 10 segments
-#SEGMENTED_12
-#   Splits the boss bar into 12 segments
-#SEGMENTED_20
-#   Splits the boss bar into 20 segments
-#SEGMENTED_6
-#   Splits the boss bar into 6 segments
-#SOLID
-#   The bar is one solid piece
+# 这些是经验条的唯一有效颜色，使用这里找到的完整名称
+# BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW（截止至此更新，这些是唯一可用的颜色，但将来可能会更改，请查看 BarColor 枚举来确认）
+# BarStyle 设置（使用完整名称）：
+# SEGMENTED_10
+#    将 boss bar 分割成 10 段
+# SEGMENTED_12
+#    将 boss bar 分割成 12 段
+# SEGMENTED_20
+#    将 boss bar 分割成 20 段
+# SEGMENTED_6
+#    将 boss bar 分割成 6 段
+# SOLID
+#    bar 是一个整体
 EarlyGameBoost:
     Enabled: true
 ExploitFix:
@@ -31,7 +31,7 @@ ExploitFix:
             Damage_Limit: 100
     COTWBreeding: true
     UnsafeEnchantments: false
-    # Prevent many exploits related to fishing
+    # 防止与钓鱼有关的许多滥用行为
     Fishing: true
     EndermanEndermiteFarms: true
     Acrobatics: true
@@ -39,27 +39,27 @@ ExploitFix:
     TreeFellerReducedXP: true
     PistonCheating: true
     SnowGolemExcavation: true
-    # This include NPCs from stuff like Citizens, this is not a setting for Vanilla Minecraft Villagers (Which can be considered NPCs)
-    # mcMMO normally doesn't process attacks against an Entity if it is an NPC from another plugin
-    # Of course, mcMMO doesn't know for sure whether something is an NPC, it checks a few known things, see our source code to see how
+    # 此处包括来自 Citizens 等插件的 NPC，不是针对原版 Minecraft 村民的设置（原版村民可能被视为 NPC）
+    # mcMMO 通常不会处理针对来自其他插件的 NPC 的攻击
+    # 当然，mcMMO 无法确定某个实体是否是 NPC，它会检查一些已知的事项，查看我们的源代码以了解详情
     PreventPluginNPCInteraction: true
 Fishing_ExploitFix_Options:
     MoveRange: 3
     OverFishLimit: 10
 Experience_Bars:
-    # Turn this to false if you wanna disable XP bars
+    # 将此设置为 false，以禁用 XP 条
     Enable: true
     Update:
-        # XP that you gained from your party but not yourself
+        # 来自团队但不是自己获得的 XP
         Party: true
-        # Passive is stuff like smelting, brewing
+        # 被动是一些如熔炼、酿造等的操作
         Passive: true
-    # If you want to use a fancy edited title from the locale, then you'll probably want to turn this on, but it will make your server do a lot more work!
-    # I recommend leaving this off!
+    # 如果您想要使用修改后的精美标题，则可能希望打开此项，但这会使您的服务器负载加重！
+    # 我建议保持关闭！
     ThisMayCauseLag:
         AlwaysUpdateTitlesWhenXPIsGained:
             Enable: false
-            # You can make your own custom details in the locale file without having to use the ExtraDetails setting!
+            # 您可以在 locale 文件中创建自定义细节，而无需使用 ExtraDetails 设置！
             ExtraDetails: false
     Acrobatics:
         Enable: true
@@ -122,16 +122,16 @@ Experience_Bars:
         Color: GREEN
         BarStyle: SEGMENTED_6
 #
-#  Settings for XP formula
+#  经验公式设置
 ###
 Experience_Formula:
-    # Valid values are: LINEAR and EXPONENTIAL
-    # If an invalid value is entered, this will reset to the default setting, which is LINEAR
+    # 有效值为：LINEAR 和 EXPONENTIAL
+    # 如果输入了无效值，将重置为默认设置，即 LINEAR
     # LINEAR:      base + (level * multiplier)
     # EXPONENTIAL: multiplier * level ^ exponent + base
     Curve: LINEAR
 
-    # If invalid values are entered mcMMO will not start and print an error in the console
+    # 如果输入了无效值，mcMMO 将无法启动并在控制台中打印错误
     Linear_Values:
         base: 1020
         multiplier: 20
@@ -140,16 +140,16 @@ Experience_Formula:
         exponent: 1.80
         base: 2000
 
-    # Cumulative experience curves will use a players power level instead of their skill level,
-    # players with high power levels will have to gain a lot more experience to reach the next level in every skill.
+    # 累积经验曲线将使用玩家的能力等级而不是他们的技能等级，
+    # 具有高能力等级的玩家将需要获得更多的经验才能达到每个技能的下一个等级。
     Cumulative_Curve: false
 
-    # Experience gained in every skill will get multiplied by this value. 1.0 by default, 2.0 means two times as much
+    # 每个技能获得的经验将乘以此值。默认为 1.0，2.0 表示获得两倍的经验
     Multiplier:
         Global: 1.0
         PVP: 1.0
 
-    # Experience gained from mobs not naturally spawned will get multiplied by this value. 0 by default.
+    # 从未自然生成的生物获得的经验将乘以此值。默认为 0。
     Eggs:
         Multiplier: 0
     Mobspawners:
@@ -159,7 +159,7 @@ Experience_Formula:
     Breeding:
         Multiplier: 1.0
 
-    # Experience gained will get divided by these values. 1.0 by default, 2.0 means two times less XP gained.
+    # 获得的经验将除以这些值。默认为 1.0，2.0 表示获得的经验减少两倍。
     Modifier:
         Swords: 1.0
         Taming: 1.0
@@ -175,23 +175,22 @@ Experience_Formula:
         Fishing: 1.0
         Alchemy: 1.0
 
-    # XP earned by players with the permission mcmmo.perks.xp.customboost.<skillname> will get multiplied
-    # with 1.25 by default, resulting in a 25% XP boost
+    # 有权限 mcmmo.perks.xp.customboost.<skillname> 的玩家获得的 XP 将乘以 1.25
     Custom_XP_Perk:
         Boost: 1.25
 
 #
-# Settings for Diminished Returns
+# 减少回报设置
 ###
 Diminished_Returns:
-    #This is the minimum amount of XP a player will earn after reaching the timed threshold (this is to prevent punishing a player too hard for earning XP)
-    ## A value of 1 would mean that a player gets FULL XP, which defeats the purpose of diminished returns, the default value is 0.05 (5% minimum XP)
-    ### Set this value to 0 to turn it off
+    # 这是玩家在达到时间阈值后获得的最小经验量（这是为了避免对玩家获得经验惩罚太严重）
+    ## 值为 1 表示玩家获得 FULL XP，这与减少回报的目的相悖，默认值为 0.05（最低 5% 经验）
+    ### 将此值设置为 0 将其关闭
     Guaranteed_Minimum_Percentage: 0.05
     Enabled: false
 
-    # Limit the amount of experience a player can earn:
-    # Threshold (amount of experience) per Time_Interval (in minutes)
+    # 限制玩家可以获得的经验量：
+    # 时间间隔（以分钟为单位）的阈值（经验量）
     Threshold:
         Swords: 20000
         Taming: 20000
@@ -210,14 +209,14 @@ Diminished_Returns:
     Time_Interval: 10
 
 #
-#  Settings for XP conversion with '/mcconvert experience'
+#  通过 '/mcconvert experience' 进行 XP 转换的设置
 ###
 Conversion:
-    # Old experience will get divided by this modifier
+    # 旧经验将除以此修饰符
     Exp_Modifier: 1
 
 #
-#  Settings for XP distribution
+#  经验分配设置
 ###
 Experience_Values:
     PVP:
@@ -227,15 +226,15 @@ Experience_Values:
         Roll: 600
         Fall: 600
 
-        # FeatherFall_Multiplier: Multiply Acrobatics XP by this value when wearing boots with the Feather Fall enchant
+        # FeatherFall_Multiplier: 当穿着拥有 Feather Fall 附魔的靴子时，将 Acrobatics XP 乘以此值
         FeatherFall_Multiplier: 2.0
     Alchemy:
-        # Alchemy potion stages are based on the number of ingredients added
-        # Potion_Stage_1 represents a base potion
-        # Potion_Stage_2 represents a base potion with one ingredient
-        # Potion_Stage_3 represents a base potion with one ingredient and one amplifier
-        # Potion_Stage_4 represents a base potion with one ingredient and two amplifiers
-        # Potion_Stage_5 represents a base potion with one ingredient where the amplifiers are swapped
+        # 炼药的药水阶段基于添加的成分数
+        # Potion_Stage_1 代表基础药水
+        # Potion_Stage_2 代表带有一个成分的基础药水
+        # Potion_Stage_3 代表带有一个成分和一个放大器的基础药水
+        # Potion_Stage_4 代表带有一个成分和两个放大器的基础药水
+        # Potion_Stage_5 代表带有一个成分，其中放大器被交换
         Potion_Stage_1: 15
         Potion_Stage_2: 30
         Potion_Stage_3: 60
@@ -393,7 +392,6 @@ Experience_Values:
         Rose_Bush: 50
         Fern: 10
         Grass: 10
-        Short_Grass: 10
         Sugar_Cane: 30
         Sunflower: 50
         Tall_Grass: 50
