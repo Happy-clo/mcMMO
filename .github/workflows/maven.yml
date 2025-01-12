@@ -1,52 +1,39 @@
-# This workflow automatically tests new commits and pull requests as they come in.
-# Note that this does not upload any artifacts, you will need to compile mcMMO manually
-# if you wish to create the actual jar.
-name: Compile and test
+name: Build
 
 on:
-  # We run our tests whenever the pom or a source file was touched.
-  # There is no need to run Maven when only the changelog was touched.
-  # We may also want to re-run this workflow when the workflow file itself
-  # was updated too.
   push:
-    paths:
-    - 'src/**'
-    - 'pom.xml'
-    - '.github/workflows/maven.yml'
-
-  # Whenever someone submits a new pull request which modified the pom or a source file,
-  # we want to ensure it compiles successfully and that all tests will pass.
   pull_request:
-    paths:
-    - 'src/**'
-    - 'pom.xml'
+    branches:
+      - master
 
 jobs:
-  compile:
-    name: Maven compiler
+  Build:
+    strategy:
+      matrix:
+        jdkversion: [17]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: ${{ matrix.jdkversion }}
+          cache: "maven"
+      - name: Build with Maven
+        run: mvn -V -B clean package --file pom.xml
 
-    # 1. Check out the current working tree
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    # 2. Setup Java 17 JDK (Adopt)
-    - name: Java 17 setup
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'adopt'
-        java-package: jdk
-        java-version: '17'
-
-    # 3. Setup local Maven package cache to speed up building
-    - name: Cache Maven packages
-      uses: actions/cache@v2
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
-
-    # 4. Build via Maven 
-    - name: Build via Maven
-      run: mvn verify -B --file pom.xml -DdisableXmlReport=true
+      - name: upload
+        uses: actions/upload-artifact@main
+        with:
+          name: MCMMO
+          path: target/*.jar
+      - name: automatic releases
+        if: "github.event_name != 'pull_request'"
+        uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "MCMMO 自动构建最新版本"
+          files: |
+            target/*.jar
