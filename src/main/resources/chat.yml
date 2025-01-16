@@ -8,11 +8,13 @@ Chat:
             Enable: true
             # 是否使用玩家的当前显示名称
             Use_Display_Names: true
+            Send_To_Console: true
             Spies:
                 # 是否允许具有聊天监视权限的玩家在加入服务器时自动切换到聊天监视模式
                 Automatically_Enable_Spying: false
         Admin:
-            # 启用或禁用管理员聊天
+            Send_To_Console: true
+            # Enable or disable admin chat
             Enable: true
             # 是否使用玩家的当前显示名称
             Use_Display_Names: true

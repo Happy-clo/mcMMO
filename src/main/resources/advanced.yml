@@ -82,6 +82,11 @@ Feedback:
             SendCopyOfMessageToChat: false
 Skills:
     General:
+        # Attack Cooldown refers to the strength of attacks in Minecraft.
+        # If an attack is spammed, it will have less bonus damage and RNG for skills to activate from mcMMO.
+        # If you want, you can turn this behavior off by setting it to false.
+        Attack_Cooldown:
+            Adjust_Skills_For_Attack_Cooldown: true
         LimitBreak:
             AllowPVE: false
         StartingLevel: 0
@@ -220,6 +225,11 @@ Skills:
             MaxBonusLevel:
                 Standard: 100
                 RetroMode: 1000
+        VerdantBounty:
+            ChanceMax: 50.0
+            MaxBonusLevel:
+                Standard: 1000
+                RetroMode: 10000
 
         HylianLuck:
             ChanceMax: 10.0
@@ -236,6 +246,11 @@ Skills:
     # 采矿技能设置
     ###
     Mining:
+        MotherLode:
+            MaxBonusLevel:
+                Standard: 1000
+                RetroMode: 10000
+            ChanceMax: 50.0
         SuperBreaker:
             AllowTripleDrops: true
         DoubleDrops:
@@ -539,12 +554,26 @@ Woodcutting:
         Knock_On_Wood:
             Add_XP_Orbs_To_Drops: true
 
-    # 双倍掉落
-    HarvestLumber:
-        # ChanceMax 和 MaxBonusLevel 仅用于 Classic，我会在未来做出更明确的说明。
-        # ChanceMax: 获得双倍掉落的最大几率（100 = 100%）
-        # MaxBonusLevel: 达到此等级时，获得双倍掉落的几率将为 <ChanceMax>
-        ChanceMax: 100.0
-        MaxBonusLevel:
-            Standard: 100
-            RetroMode: 1000
+        # Triple Drops
+        CleanCuts:
+            # ChanceMax: Maximum chance of receiving triple drops (100 = 100%)
+            # MaxBonusLevel: Level when the maximum chance of receiving triple drops is reached
+            ChanceMax: 50.0
+            MaxBonusLevel:
+                Standard: 1000
+                RetroMode: 10000
+        # Double Drops
+        HarvestLumber:
+            # ChanceMax: Maximum chance of receiving double drops (100 = 100%)
+            # MaxBonusLevel: Level when the maximum chance of receiving double drops is reached
+            ChanceMax: 100.0
+            MaxBonusLevel:
+                Standard: 100
+                RetroMode: 1000
+    Maces:
+        Cripple:
+            Chance_To_Apply_On_Hit:
+                Rank_1: 10
+                Rank_2: 15
+                Rank_3: 20
+                Rank_4: 33

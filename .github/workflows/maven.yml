@@ -23,7 +23,7 @@ jobs:
         run: mvn -V -B clean package --file pom.xml
 
       - name: upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: MCMMO
           path: target/*.jar
