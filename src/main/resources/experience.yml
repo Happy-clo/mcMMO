@@ -340,6 +340,8 @@ Experience_Values:
         Mushroom_Stem: 80
     Herbalism:
         Eyeblossom: 66
+        Open_Eyeblossom: 66
+        Closed_Eyeblossom: 66
         Pitcher_Plant: 160
         Pink_Petals: 10
         Small_Dripleaf: 140
@@ -406,6 +408,7 @@ Experience_Values:
         Cocoa: 30
         Potatoes: 50
         Wheat: 50
+        Beetroot: 50
         Beetroots: 50
         Nether_Wart: 50
         Dead_Bush: 30
