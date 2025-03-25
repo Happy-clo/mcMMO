@@ -39,6 +39,7 @@ import java.util.List;
 import static com.gmail.nossr50.datatypes.experience.XPGainReason.PVP;
 import static com.gmail.nossr50.util.AttributeMapper.MAPPED_MOVEMENT_SPEED;
 import static com.gmail.nossr50.util.MobMetadataUtils.hasMobFlag;
+import static com.gmail.nossr50.util.skills.ProjectileUtils.isCrossbowProjectile;
 
 public final class CombatUtils {
 
@@ -567,9 +568,8 @@ public final class CombatUtils {
             }
         } else if (painSource instanceof Arrow arrow) {
             ProjectileSource projectileSource = arrow.getShooter();
-            boolean isCrossbow = arrow.isShotFromCrossbow();
+            boolean isCrossbow = isCrossbowProjectile(arrow);
             if (projectileSource instanceof Player player) {
-
                 if (!Misc.isNPCEntityExcludingVillagers(player)) {
                     if (!isCrossbow && mcMMO.p.getSkillTools().canCombatSkillsTrigger(PrimarySkillType.ARCHERY, target)) {
                         processArcheryCombat(target, player, event, arrow);
@@ -914,7 +914,7 @@ public final class CombatUtils {
         baseXP *= multiplier;
 
         if (baseXP > 0) {
-            mcMMO.p.getFoliaLib().getImpl().runAtEntity(target, new AwardCombatXpTask(mcMMOPlayer, primarySkillType, baseXP, target, xpGainReason));
+            mcMMO.p.getFoliaLib().getScheduler().runAtEntity(target, new AwardCombatXpTask(mcMMOPlayer, primarySkillType, baseXP, target, xpGainReason));
         }
     }
 
@@ -1056,6 +1056,6 @@ public final class CombatUtils {
      * @param arrow the projectile
      */
     public static void delayArrowMetaCleanup(@NotNull Arrow arrow) {
-        mcMMO.p.getFoliaLib().getImpl().runLater(() -> ProjectileUtils.cleanupProjectileMetadata(arrow), 20*120);
+        mcMMO.p.getFoliaLib().getScheduler().runLater(() -> ProjectileUtils.cleanupProjectileMetadata(arrow), 20*120);
     }
 }
