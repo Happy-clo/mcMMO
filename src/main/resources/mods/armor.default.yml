@@ -1,48 +1,44 @@
 #
-#  Armor example configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
+#  装甲示例配置
+#  上次更新时间：${project.version}-b${BUILD_NUMBER}
 #
-# Any file named armor.*.yml in the mod folder will be loaded as a armor config
-# For every armor type there is a separate section.
-# The names of each subitem should be the exact material name.
-# The bare minimum of an Armor piece is that it has a Repair_Material
+# 位于mod文件夹中的任何名为armor.*.yml的文件将被加载为装甲配置
+# 对于每种装甲类型都有一个单独的节。
+# 每个子项的名称应为确切的材料名称。
+# 最基本的装甲部件是具有Repair_Material。
 #
 #
-# Repairable: Whether the item is repairable
-## This defaults to true
+# Repairable：物品是否可修复
+## 默认为true
 #
-# Repair_Material: This is the material name of the item used to repair this armor.
-## This is required to be set if you want to be able to repair the item.
+# Repair_Material：用于修复此装甲的物品的材料名称。
+## 如果要能够修复物品，则必须设置此项。
 #
-# Repair_Material_Data_Value: This is the metadata of the item used to repair this armor.
-## A value of -1 means to ignore all metadata when repairing.
-## This defaults to -1
+# Repair_Material_Data_Value：用于修复此装甲的物品的元数据。
+## 值为-1表示修复时忽略所有元数据。
+## 默认为-1
 #
-# Repair_Material_Quantity: This is the minimum number of items needed to repair this item ignoring all other repair bonuses.
-## This is typically the number of the repair material needed to create a new item, for example for a sword it is 2, for an axe it is 3
-## This defaults to 9
+# Repair_Material_Quantity：修复此物品所需的最小物品数量，忽略所有其他修复奖励。
+## 通常情况下，这是创建新物品所需的修复材料的数量，例如对于剑是2，对于斧头是3
+## 默认为9
 #
-# Repair_Material_Pretty_Name: The pretty name of the repair material.
-## Used in the feedback message when not enough repair materials are found.
-## This defaults to the Repair_Material converted to string.
+# Repair_Material_Pretty_Name：修复材料的漂亮名称。
+## 在没有足够的修复材料时用于反馈消息。
+## 默认为转换为字符串的Repair_Material。
 #
-# Repair_Material_Pretty_Name: The pretty name of the repair material.
-## Used in the feedback message when not enough repair materials are found.
-## This defaults to the Repair_Material converted to string.
+# Repair_MinimumLevel：修复此物品所需的最低修复等级。
+## 有效值为=> 0
+## 默认为0
 #
-# Repair_MinimumLevel: This is the minimum repair level needed to repair this item.
-## Valid values are => 0
-## This defaults to 0
+# Repair_XpMultiplier：将经验奖励乘以的数量。
+## 默认为1
 #
-# Repair_XpMultiplier: This is the amount to multiply the xp bonus by.
-## This defaults to 1
-#
-# Durability: This is the maximum durability of the armor.
-## Valid values are >= 1
+# Durability：装甲的最大耐久度。
+## 有效值为>= 1
 #
 ###
 #
-#  Settings for Boots
+#  靴子的设置
 ###
 Boots:
     Boot_1:

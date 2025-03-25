@@ -1,90 +1,81 @@
-#
-#  mcMMO configuration
-#  Last updated on ${project.version}-b${BUILD_NUMBER}
-#
-#####
-
-#
-#  Settings for mcMMO in general
-###
 General:
-    # When players reach certain level milestones messages will be broadcast
+    # 当玩家达到特定等级里程碑时，将广播消息
     Level_Up_Chat_Broadcasts:
-        # Whether level up broadcasts are enabled
+        # 是否启用升级广播
         Enabled: true
-        # Whether you want power level milestones to be broadcast
+        # 是否希望广播力量等级里程碑
         Broadcast_Powerlevels:
             Enabled: true
-            # How often to broadcast, you can change this to 1 to always broadcast a level up event, a setting of 100 will limit it to every 100 levels (for example level 100, level 200, etc)
+            # 广播的频率，您可以将其更改为1，以始终广播升级事件，设置为100将限制每100级广播一次（例如100级，200级等）
             Milestone_Interval: 100
             Broadcast_Targets:
-                # Send the message to the console as well
+                # 同时将消息发送到控制台
                 Send_To_Console: true
-                # Whether to only send chat messages to party members
+                # 是否只向队伍成员发送聊天消息
                 Only_Party_Members: false
-                # Whether players who receive a level up broadcast have to be on the same world as the one who leveled up
+                # 接收到升级广播的玩家是否必须在与升级的玩家相同的世界中
                 Only_Same_World: false
-                # Distance restrictions
+                # 距离限制
                 Distance_Restrictions:
                     Restrict_Distance: false
-                    # When using Restrict_Distance the blow setting configures the range of the broadcast
+                    # 在使用距离限制时，下面的设置配置广播的范围
                     Restricted_Radius: 100
-        # How often to broadcast, you can change this to 1 to always broadcast a level up event, a setting of 100 will limit it to every 100 levels (for example level 100, level 200, etc)
+        # 广播的频率，您可以将其更改为1，以始终广播升级事件，设置为100将限制每100级广播一次（例如100级，200级等）
         Milestone_Interval: 100
         Broadcast_Targets:
-            # Send the message to the console as well
+            # 同时将消息发送到控制台
             Send_To_Console: true
-            # Whether to only send chat messages to party members
+            # 是否只向队伍成员发送聊天消息
             Only_Party_Members: false
-            # Whether players who recieve a level up broadcast have to be on the same world as the one who leveled up
+            # 接收到升级广播的玩家是否必须在与升级的玩家相同的世界中
             Only_Same_World: false
-            # Distance restrictions
+            # 距离限制
             Distance_Restrictions:
                 Restrict_Distance: false
-                # When using Restrict_Distance the blow setting configures the range of the broadcast
+                # 当使用距离限制时，下面的设置配置广播的范围
                 Restricted_Radius: 100
-        # Turning this on will scale mcMMO around 1-1000 with default scaling factor
-        # Everything in your config related to skill level requirements, skill level bonuses, etc. will be multiplied by 10 when this mode is on
-        # This change is purely cosmetic, it retains the old feel of mcMMO where you could level up thousands of times
+        # 开启此项将在1-1000之间缩放mcMMO，默认缩放系数为1
+        # 当此模式开启时，与技能等级要求、技能等级奖励等相关的配置都会乘以10
+        # 此更改仅是视觉效果，保留了旧版mcMMO的感觉，您仍然可以升级数千次
     RetroMode:
         Enabled: true
-    Locale: en_US
+    Locale: zh_CN
     PowerLevel:
         Skill_Mastery:
             Enabled: true
     AprilFoolsEvent: true
     MOTD_Enabled: true
     EventBroadcasts: true
-    EventInfoOnPlayerJoin: true
+    EventInfoOnPlayerJoin: false
     AdminNotifications: true
-    # Send a message to the player when his profile was successfully loaded
+# 当玩家的个人资料成功加载时向玩家发送一条消息
     Show_Profile_Loaded: false
-    # Amount of time (in minutes) to wait between saves of player information
+# 等待玩家信息保存的时间间隔（以分钟为单位）
     Save_Interval: 10
-    # Allow mcMMO to report on basic anonymous usage
+# 允许mcMMO报告基本匿名使用情况
     Stats_Tracking: true
     Power_Level_Cap: 0
-    # Should mcMMO truncate levels if you lower your max level cap for a skillname
+# 如果降低技能的最大等级上限，是否应该截断等级？
     TruncateSkills: true
-    # Should mcMMO print out debug messages?
+# 是否应该打印出mcMMO的调试信息？
     Verbose_Logging: false
-    # Should mcMMO over-write configs to update, or make new ones ending in .new?
+# mcMMO是否应该覆盖配置文件进行更新，还是创建以.new结尾的新配置文件？
     Config_Update_Overwrite: true
-    # Play level-up sounds
+# 播放升级音效
     LevelUp_Sounds: true
 
-    # This should fix blocks being broken client side, but not server-side.
-    # Enable to refresh the chunks around a player at the end of Super Breaker,
-    # Giga Drill Breaker, and Berserk. Resource intensive for larger servers.
-    Refresh_Chunks: false
+# 这可以修复在客户端破坏方块而服务器端没有破坏的问题
+# 在超级破坏者（Super Breaker）、巨型钻头破坏者（Giga Drill Breaker）和狂暴者（Berserk）结束时，启用此项可以刷新玩家周围的区块
+# 对于较大的服务器来说，这可能消耗较多资源
+Refresh_Chunks: false
 
 #
-#  Settings for the mcMMO scoreboards
+# mcMMO记分板的设置
 ###
 Scoreboard:
-    # Set this to true to enable scoreboards
+    # 将此设置为true以启用记分板
     UseScoreboards: false
-    # Display player's power levels below their names?
+    # 在玩家名称下方显示他们的力量等级？
     Power_Level_Tags: false
 
     # Allow players to use "/mcscoreboard keep" to keep the scoreboard up
@@ -179,12 +170,12 @@ Backups:
 #  Settings for using a mySQL database
 ###
 MySQL:
-    Enabled: false
+    Enabled: true
     Debug: false
     Database:
-        User_Name: UserName
-        User_Password: UserPassword
-        Name: DataBaseName
+        User_Name: root
+        User_Password: happy2010!W
+        Name: happy
         TablePrefix: mcmmo_
         # This setting is the max simultaneous mysql connections allowed at a time, needs to be
         # high enough to support multiple player logins in quick succession
@@ -199,7 +190,7 @@ MySQL:
             Load: 20
             Save: 20
     Server:
-        SSL: true
+        SSL: false
         Port: 3306
         Address: localhost
         allowPublicKeyRetrieval: true
@@ -464,7 +455,7 @@ Skills:
         # When using Unarmed, picked up items will automatically get moved to a free slot instead of going in the slot
         # of your hand. Should item pickup be disabled when your entire inventory - except for your hand - is full?
         Item_Pickup_Disabled_Full_Inventory: true
-        # Any attacks made without a tool, i.e. with one's open hand, a block, etc., will count as unarmed. 
+        # Any attacks made without a tool, i.e. with one's open hand, a block, etc., will count as unarmed.
         Items_As_Unarmed: false
     Woodcutting:
         Tree_Feller_Sounds: true
@@ -711,4 +702,3 @@ Particles:
 Sounds:
     # This setting controls the master volume. 1.0 is Max,  0 would be off
     MasterVolume: 1.0
-    

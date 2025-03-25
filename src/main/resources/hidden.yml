@@ -1,11 +1,11 @@
 #
-# WARNING: THIS CONFIG IS FOR ADVANCED USERS ONLY.
-# You will need to reset any values in this config every time you update mcMMO
+# 警告：此配置仅适用于高级用户。
+# 每次更新 mcMMO 时，您将需要重置此配置中的任何值。
 ###
 Options:
-    # true to use Chunklets metadata store system, false to disable
+    # 设置为 true 以使用 Chunklets 元数据存储系统，设置为 false 以禁用
     Chunklets: true
-    # Square root of the number of chunks to convert per tick.
+    # 每次刻处理的要转换的区块数的平方根。
     ConversionRate: 1
-    # true to use enchantment buffs for Super Breaker & Giga Drill Breaker, false to use potion buffs
+    # 设置为 true 以使用附魔增益来进行超级破坏者和超级凿子破坏者，设置为 false 以使用药水增益
     EnchantmentBuffs: true
