@@ -406,9 +406,12 @@ Skills:
 # 剑的设置
 ###
 Swords:
+    Stab:
+        Base_Damage: 1.0
+        Per_Rank_Multiplier: 1.5
     Rupture:
         Rupture_Mechanics:
-            # 这是 % 几率，15 表示 15% 几率
+            # 这是触发几率的百分比，15 表示 15% 的几率
             Chance_To_Apply_On_Hit:
                 Rank_1: 15
                 Rank_2: 33
@@ -417,7 +420,7 @@ Swords:
             Duration_In_Seconds:
                 Against_Players: 5
                 Against_Mobs: 5
-            # Tick interval damage 在 rupture 期间每秒应用两次伤害，它是“纯粹的”伤害，不会因护甲或吸收等而降低
+            # 在 Rupture 持续时间内，每秒伤害施加两次，伤害是“纯粹的”，不会被护甲或吸收等降低
             Tick_Interval_Damage:
                 Against_Players:
                     Rank_1: 0.1
@@ -429,8 +432,8 @@ Swords:
                     Rank_2: 0.75
                     Rank_3: 0.9
                     Rank_4: 1
-            # 如果 rupture 运行了 5 秒钟而没有被重新应用，它会爆炸
-            # 此伤害 **不是** 纯粹的，会受到护甲/吸收等的大幅降低
+            # 如果 Rupture 持续 5 秒没有被重新施加，它会爆炸
+            # 这个伤害**不是**纯粹的，对护甲/吸收等有显著降低
             Explosion_Damage:
                 Against_Players:
                     Rank_1: 10
